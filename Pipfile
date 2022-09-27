@@ -8,6 +8,8 @@ fastapi = "*"
 librosa = "*"
 gunicorn = "*"
 uvicorn = "*"
+scipy = "*"
+numpy = "*"
 
 [dev-packages]
 
