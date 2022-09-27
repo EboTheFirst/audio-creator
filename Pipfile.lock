@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "8e0b5a11ba3414f7f7eb2c133b899611065f387bad5859f20beb31c2849dade4"
+            "sha256": "e40b77bf48d9a776f45580e14f491c61a59d3ab7a778838fe1626d4654f65c80"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -40,11 +40,11 @@
         },
         "certifi": {
             "hashes": [
-                "sha256:36973885b9542e6bd01dea287b2b4b3b21236307c56324fcc3f1160f2d655ed5",
-                "sha256:e232343de1ab72c2aa521b625c80f699e356830fd0e2c620b465b304b17b0516"
+                "sha256:0d9c601124e5a6ba9712dbc60d9c53c21e34f5f641fe83002317394311bdce14",
+                "sha256:90c1a32f1d68f940488354e36370f6cca89f0f106db09518524c88d6ed83f382"
             ],
             "markers": "python_version >= '3.6'",
-            "version": "==2022.9.14"
+            "version": "==2022.9.24"
         },
         "cffi": {
             "hashes": [
@@ -138,6 +138,14 @@
             ],
             "index": "pypi",
             "version": "==0.85.0"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e",
+                "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"
+            ],
+            "index": "pypi",
+            "version": "==20.1.0"
         },
         "idna": {
             "hashes": [
@@ -424,13 +432,13 @@
         },
         "soundfile": {
             "hashes": [
-                "sha256:2d17e0a6fc2af0d6c1d868bafa5ec80aae6e186a97fec8db07ad6af29842fbc7",
-                "sha256:4555438c2c4f02b39fea2ed40f6ddeda88a80cd1ee9dd129be4d5f5134698cc2",
-                "sha256:490cff42650733d1832728b937fe99fa1802896f5ef4d61bcf78cf7ebecb107b",
-                "sha256:5e342ee293b896d31da67617fe65d0bdca217af193991b0cb6052353b1e0e506",
-                "sha256:b361d4ac1519a2e516cabafa6bf7e93492f999f35d7d25350cd87fdc3e5cb27e"
+                "sha256:08d9636815692f332e042990d449e79b888d288f0752226d8602e91523a0a29b",
+                "sha256:12f66fe9dcddedaa6c808bc3e104fc67fcee59dc64214bf7f43605e69836c497",
+                "sha256:9e6a62eefad0a7f856cc8f5ede7f1a0c196b65d2901c00fffc74a3d7e81d89c8",
+                "sha256:a4ab6f66ad222d8e144dcb6abc73fbb867c11da2934b677f9b129778a6c65112",
+                "sha256:f4e4f832b1958403fb9726eeea54e0ebf1c7fc2599ff296a7ab1ac062f8048c9"
             ],
-            "version": "==0.10.3.post1"
+            "version": "==0.11.0"
         },
         "starlette": {
             "hashes": [
