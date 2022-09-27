@@ -32,14 +32,19 @@ def test(audio: AudString):
     prescaled = [((2 *(data - mn))/(mx-mn) - 1) for data in dataArray]
     scaled = np.int16(prescaled/np.max(np.abs(prescaled)) * 32767)
 
-    response = {
-        "audioArray": scaled,
-        "size": len(scaled),
-        }
     try:
         write('test.wav', 2000, scaled)
-    except:
+        scaled = list(map(float,scaled))
         response = {
-            "msg": "Something went wrong"
+            "audioArray": scaled,
+            "size": len(scaled),
+            }
+    except Exception as e:
+        
+        response = {
+            "msg": "Something went wrong",
+            "exception": repr(e)
         }
-    return scaled
+
+
+    return response
