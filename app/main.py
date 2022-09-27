@@ -26,7 +26,7 @@ class AudString(BaseModel):
 
 @app.post("/string")
 def test(audio: AudString):
-    dataArray = list(map(float,audio.split(',')))
+    dataArray = list(map(float,audio.audio.split(',')))
     mn = min(dataArray)
     mx = max(dataArray)
     prescaled = [((2 *(data - mn))/(mx-mn) - 1) for data in dataArray]
