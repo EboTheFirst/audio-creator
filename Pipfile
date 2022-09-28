@@ -5,12 +5,12 @@ name = "pypi"
 
 [packages]
 fastapi = "*"
-librosa = "*"
 gunicorn = "*"
 uvicorn = "*"
 scipy = "*"
 numpy = "*"
 requests = "*"
+requests-toolbelt = "*"
 
 [dev-packages]
 

@@ -7,7 +7,9 @@ from pydantic import BaseModel
 import numpy as np
 from scipy.io.wavfile import write
 import requests
+from requests_toolbelt.multipart.encoder import MultipartEncoder
 
+print(dict(r="124", t="567"))
 
 app = FastAPI()
 
@@ -47,10 +49,32 @@ def test(audio: AudString):
             "exception": repr(e)
         }
     
-    url='https://upbeat-backend.herokuapp.com/recordings/uploadaudio'
-    values = { "device": "xyz-test"  }
-    files = {'audio': open('test.wav','rb')}
 
-    r=requests.post(url,files=files,data=values)
-
-    return response
+    mp_encoder = MultipartEncoder(
+        fields={
+            'device': '633432cc1d2cab3bd54ac739',
+            'audio': ('test.wav', open('test.wav','rb'), 'audio/wav'),
+        }
+    )
+    
+    url='https://upbeat-backend.herokuapp.com/recordings/'
+    r = requests.post(
+        url,
+        data=mp_encoder,  # The MultipartEncoder is posted as data, don't use files=...!
+        # The MultipartEncoder provides the content-type header with the boundary:
+        headers={
+            'Content-Type': mp_encoder.content_type,
+            "x-auth-token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkZXYiOiJEZXZpY2Uga2V5IiwiaWF0IjoxNjY0MzcxNzk5fQ.EBYjmRswL9DFw5I1Bq2XxLgxjjZbeg-6N2FrQ1fpevQ"
+            }
+    )
+    
+    # values = { "device": "633432cc1d2cab3bd54ac739"  }
+    # # files = dict(audio= open('test.wav','rb'), device="633432cc1d2cab3bd54ac739")
+    # files = {'audio': open('test.wav','rb')}
+    # headers = {
+    #     "x-auth-token": "eyJhbGciOiJIUzI1NiJ9.RGV2aWNlIGtleQ.JSzlXJjf6nY2pl4cOMoRUPW0p7fhs3mYpwSrRdfcXTk",
+    #     'content-type': 'multipart/form-data'
+    #     }
+    # r=requests.post(url,files=files,data=values, headers=headers)
+    print((r.status_code))
+    return "hi"
