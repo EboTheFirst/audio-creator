@@ -10,6 +10,7 @@ gunicorn = "*"
 uvicorn = "*"
 scipy = "*"
 numpy = "*"
+requests = "*"
 
 [dev-packages]
 

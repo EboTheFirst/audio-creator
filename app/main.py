@@ -6,6 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import numpy as np
 from scipy.io.wavfile import write
+import requests
 
 
 app = FastAPI()
@@ -45,6 +46,11 @@ def test(audio: AudString):
             "msg": "Something went wrong",
             "exception": repr(e)
         }
+    
+    url='https://upbeat-backend.herokuapp.com/recordings/uploadaudio'
+    values = { "device": "xyz-test"  }
+    files = {'audio': open('test.wav','rb')}
 
+    r=requests.post(url,files=files,data=values)
 
     return response
