@@ -1,7 +1,7 @@
 import random
 import shutil
 from typing import Union
-from fastapi import FastAPI, UploadFile
+from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import numpy as np
@@ -76,5 +76,4 @@ def test(audio: AudString):
     #     'content-type': 'multipart/form-data'
     #     }
     # r=requests.post(url,files=files,data=values, headers=headers)
-    print((r.status_code))
-    return "hi"
+    return r.status_code
